@@ -7,8 +7,22 @@ namespace UABEAvalonia
     {
         public static async Task<MessageBoxResult> ShowDialog(Window window, string header, string message)
         {
-            MessageBox mb = new MessageBox(header, message, MessageBoxType.OK);
-            return await mb.ShowDialog<MessageBoxResult>(window);
+            if (!window.IsVisible)
+            {
+                window.Opened += async (sender, e) => 
+                {
+                    MessageBox mb = new MessageBox(header, message, MessageBoxType.OK);
+                    await mb.ShowDialog<MessageBoxResult>(window);
+                };
+            }
+            else
+            {
+                MessageBox mb = new MessageBox(header, message, MessageBoxType.OK);
+                return await mb.ShowDialog<MessageBoxResult>(window);
+            }
+
+            return MessageBoxResult.Unknown;
+            
         }
 
         public static async Task<MessageBoxResult> ShowDialog(Window window, string header, string message, MessageBoxType buttons)

@@ -77,7 +77,8 @@ namespace UABEAvalonia
             }
             else
             {
-                await MessageBoxUtil.ShowDialog(this, "Error", "Missing classdata.tpk by exe.\nPlease make sure it exists.");
+                await MessageBoxUtil.ShowDialog(this, "Error", "Missing classdata.tpk by exe.\nPlease make sure it exists.",);
+
                 Close();
                 Environment.Exit(1);
             }

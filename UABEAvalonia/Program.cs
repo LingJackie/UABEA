@@ -23,7 +23,7 @@ namespace UABEAvalonia
             bool usesConsole = false;
             if (Environment.OSVersion.Platform == PlatformID.Win32NT)
             {
-                usesConsole = AttachConsole(-1);
+                // usesConsole = AttachConsole(-1);
 
                 if (usesConsole)
                 {
@@ -51,6 +51,7 @@ namespace UABEAvalonia
                 if (usesConsole)
                     CommandLineHandler.PrintHelp();
                 BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+             
             }
         }
 

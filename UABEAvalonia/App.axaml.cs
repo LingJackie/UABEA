@@ -18,6 +18,7 @@ namespace UABEAvalonia
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
                 desktop.MainWindow = new MainWindow();
+                
             }
 
             base.OnFrameworkInitializationCompleted();

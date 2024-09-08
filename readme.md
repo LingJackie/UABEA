@@ -33,3 +33,12 @@ Many games are also now using addressables. You can tell if the bundle you're op
 - [ImageSharp](https://github.com/SixLabors/ImageSharp) (Apache License 2.0)
 - [Fsb5Sharp](https://github.com/SamboyCoding/Fmod5Sharp) (MIT license)
 - [Font Awesome](https://fontawesome.com) (CC BY 4.0 license)
+
+## Notes
+Might need to paste in classdata.tpk to `UABEA\UABEAvalonia\bin\Debug\net6.0`. Don't know what it does but everything breaks otherwise.
+
+dotnet clean
+dotnet build
+dotnet run
+
+make stuff.cpp
